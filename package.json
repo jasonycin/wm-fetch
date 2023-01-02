@@ -1,0 +1,24 @@
+{
+  "name": "wm-fetch",
+  "version": "3.0.0",
+  "description": "High-level scraper for the W&M Open Course List",
+  "main": "dist/lib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scraper", "w&m", "courses", "william & mary", "ratelimit"
+  ],
+  "author": "jasonycin <jalapierre@wm.edu>",
+  "license": "ISC",
+  "bugs": {
+    "email": "jalapierre@wm.edu"
+  },
+  "dependencies": {
+    "@types/jsdom": "^20.0.1",
+    "jsdom": "^20.0.3"
+  },
+  "devDependencies": {
+    "typedoc": "^0.23.23"
+  }
+}

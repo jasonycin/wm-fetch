@@ -1,0 +1,186 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>W&amp;M Fetch</title><meta name="description" content="Documentation for W&M Fetch"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">W&amp;M Fetch</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<h2>W&amp;M Fetch</h2></div>
+<div class="tsd-panel tsd-typography"><blockquote>
+<p>⚠️ <strong>Replaces</strong> the deprecated <a href="https://www.npmjs.com/package/wm-classes">wm-classes</a> library</p>
+</blockquote>
+
+<a href="#wampm-course-scraper" id="wampm-course-scraper" style="color: inherit; text-decoration: none;">
+  <h1>W&amp;M Course Scraper</h1>
+</a>
+
+<a href="#information" id="information" style="color: inherit; text-decoration: none;">
+  <h3>Information</h3>
+</a>
+<p>This is a high-level scrapper for the course list of the College of William and Mary. It can be used to quickly retrieve all courses
+found <a href="https://courselist.wm.edu/courselist/courseinfo/search?">here</a>. Feel free to send a pull request with enhancements!</p>
+<p>In addition, this scrapper <strong>requires setting a user agent with a W&amp;M email address</strong> and sets a <strong>default rate limit of 500 milliseconds</strong>.
+This identifies your requests to the W&amp;M servers and prevents mistakenly overloading the server with requests.</p>
+
+<a href="#table-of-contents" id="table-of-contents" style="color: inherit; text-decoration: none;">
+  <h3>Table of Contents</h3>
+</a>
+<ol>
+<li>📰 <a href="#whats-changed">What&#39;s changed?</a></li>
+<li>🧑‍🏫 <a href="#usage">Usage</a><ol>
+<li>👷‍♂️<a href="#installation">Installation</a></li>
+<li>🏗️ <a href="#instantiation">Instantiation</a></li>
+<li>🖥️ <a href="#fetch-course-data">Fetch data</a><ol>
+<li>🏖️ <a href="#all-courses--all-">All courses</a></li>
+<li>⛱️ <a href="#specific-query--courses-">Specific query</a></li>
+</ol>
+</li>
+<li>🤓 <a href="#enums--filter">Enums &amp; filters</a></li>
+<li>📕 <a href="#course-class">Course class</a></li>
+<li>🫶 <a href="#additional-methods">Additional methods</a></li>
+</ol>
+</li>
+<li>👏 <a href="#author">Author</a></li>
+</ol>
+
+<a href="#what39s-changed" id="what39s-changed" style="color: inherit; text-decoration: none;">
+  <h2>What&#39;s changed?</h2>
+</a>
+<blockquote>
+<p>⚠️ <strong>Replaces</strong> the deprecated <a href="https://www.npmjs.com/package/wm-classes">wm-classes</a> library.<br>I&#39;ve made major changes that make this library much more reliable and less opinionated. You may notice that
+CSV and JSON support has been removed. It&#39;s now up to you to decide how you want to save your data!</p>
+</blockquote>
+<ul>
+<li><strong>v3.0.0</strong> - 🎉 Replaces the deprecated <a href="https://www.npmjs.com/package/wm-classes">wm-classes</a> library</li>
+</ul>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h3>Installation</h3>
+</a>
+<p>In the terminal, run the following command:</p>
+<pre><code class="language-bash"><span class="hl-0">npm install wm-fetch</span>
+</code></pre>
+<p>After installation of the NPM module, you can import the library:</p>
+<pre><code class="language-ts"><span class="hl-1">// For TypeScript use the import syntax (reccomended):</span><br/><span class="hl-2">import</span><span class="hl-0"> { </span><span class="hl-3">Scraper</span><span class="hl-0">, </span><span class="hl-3">Filter</span><span class="hl-0"> } </span><span class="hl-2">from</span><span class="hl-0"> </span><span class="hl-4">&#39;wm-fetch&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-1">// For JavaScript use the require syntax:</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">wm</span><span class="hl-0"> = </span><span class="hl-7">require</span><span class="hl-0">(</span><span class="hl-4">&#39;wm-classes&#39;</span><span class="hl-0">);</span>
+</code></pre>
+
+<a href="#instantiation-new-scraper" id="instantiation-new-scraper" style="color: inherit; text-decoration: none;">
+  <h3>Instantiation (<code>new Scraper()</code>)</h3>
+</a>
+<p><code>userAgent</code> - Required. Must be a valid @wm.edu email address.  </p>
+<p><code>rateLimit</code> - Optional. The rate limit in milliseconds. Defaults to 500ms.</p>
+<blockquote>
+<p>⚠️ <strong>Note:</strong> Please be honest and conscious with the user-agent and the rate limit. The W&amp;M servers are not meant to be overloaded with requests. If there are issues, the user-agent allows them to contact you.</p>
+</blockquote>
+<pre><code class="language-ts"><span class="hl-1">// TODO: Replace user agent string</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">scraper</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-7">Scraper</span><span class="hl-0">(</span><span class="hl-4">&#39;abcdef@wm.edu&#39;</span><span class="hl-0">)</span>
+</code></pre>
+
+<a href="#fetch-course-data" id="fetch-course-data" style="color: inherit; text-decoration: none;">
+  <h3>Fetch Course Data</h3>
+</a>
+<p>You can either get all data or filter your query. If you do not provide a filter, all courses will be retrieved.</p>
+
+<a href="#all-courses-all" id="all-courses-all" style="color: inherit; text-decoration: none;">
+  <h4>All courses (<code>.all()</code>)</h4>
+</a>
+<p><code>term</code> - Optional. If not provided, the latest term will be fetched.<br><code>concurrency</code> - Optional. If set, requests will be made concurrently in batches.</p>
+<blockquote>
+<p>⚠️🚨 <strong>Be careful with concurrency.</strong> If you set it too high, you may overload the W&amp;M servers and get blocked. You will exceed your set rate limit!  </p>
+<p>🧐 <strong>Example</strong>: With unique 74 subjects and a default rate limit of 500ms and a concurrency of 10, you will make 
+7 requests in parallel and wait 500ms between each batch. This will take about 3.5 seconds to complete.</p>
+</blockquote>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">scraper</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-7">Scraper</span><span class="hl-0">(</span><span class="hl-4">&#39;abcdef@wm.edu&#39;</span><span class="hl-0">);</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">courses</span><span class="hl-0"> = </span><span class="hl-2">await</span><span class="hl-0"> </span><span class="hl-3">scraper</span><span class="hl-0">.</span><span class="hl-7">all</span><span class="hl-0">({ </span><span class="hl-3">term:</span><span class="hl-0"> </span><span class="hl-8">202320</span><span class="hl-0">, </span><span class="hl-3">concurrency:</span><span class="hl-0"> </span><span class="hl-8">5</span><span class="hl-0"> });</span>
+</code></pre>
+
+<a href="#specific-query-courses" id="specific-query-courses" style="color: inherit; text-decoration: none;">
+  <h4>Specific Query (<code>.courses()</code>)</h4>
+</a>
+<p><code>filters</code> - Optional. See <a href="#filter">Filter</a>. </p>
+<pre><code class="language-ts"><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">scraper</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-7">Scraper</span><span class="hl-0">(</span><span class="hl-4">&#39;abcdef@wm.edu&#39;</span><span class="hl-0">);</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">filter</span><span class="hl-0"> = </span><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-7">Filter</span><span class="hl-0">({ </span><span class="hl-3">subject:</span><span class="hl-0"> </span><span class="hl-3">Subjects</span><span class="hl-0">.</span><span class="hl-6">BIOLOGY</span><span class="hl-0"> })</span><br/><span class="hl-5">const</span><span class="hl-0"> </span><span class="hl-6">courses</span><span class="hl-0"> = </span><span class="hl-2">await</span><span class="hl-0"> </span><span class="hl-3">scraper</span><span class="hl-0">.</span><span class="hl-7">courses</span><span class="hl-0">(</span><span class="hl-3">filter</span><span class="hl-0">)</span>
+</code></pre>
+
+<a href="#enums-amp-filter" id="enums-amp-filter" style="color: inherit; text-decoration: none;">
+  <h3>Enums &amp; Filter</h3>
+</a>
+<p>Use this to specify your query. This is the biggest breaking-change from the previously deprecated <code>wm-classes</code> library.
+For IntelliSense support, the enums <code>Attributes</code>, <code>Levels</code>, <code>Status</code>, <code>Subjects</code>, and <code>TermPart</code> are provided.
+These are also the available arguments.</p>
+<blockquote>
+<p>🚨 <strong>Hint</strong>: Not setting a <code>Subject</code> AND <code>Attribute</code> will throw a <code>ScraperError</code>.</p>
+</blockquote>
+
+<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+  <h4>Examples</h4>
+</a>
+<pre><code class="language-ts"><span class="hl-2">import</span><span class="hl-0"> { </span><span class="hl-3">Filter</span><span class="hl-0">, </span><span class="hl-3">Attributes</span><span class="hl-0">, </span><span class="hl-3">Levels</span><span class="hl-0">, </span><span class="hl-3">Status</span><span class="hl-0">, </span><span class="hl-3">Subjects</span><span class="hl-0">, </span><span class="hl-3">TermPart</span><span class="hl-0"> } </span><span class="hl-2">from</span><span class="hl-0"> </span><span class="hl-4">&quot;wm-fetch&quot;</span><span class="hl-0">;</span><br/><br/><span class="hl-1">// Biology courses with the NQR attribute</span><br/><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-7">Filter</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-3">subject:</span><span class="hl-0"> </span><span class="hl-3">Subjects</span><span class="hl-0">.</span><span class="hl-6">BIOLOGY</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-3">attribute:</span><span class="hl-0"> </span><span class="hl-3">Attributes</span><span class="hl-0">.</span><span class="hl-6">NAT_WORLD_QUANT_REASONING</span><br/><span class="hl-0">})</span><br/><br/><span class="hl-1">// Open undergraduate computer science courses</span><br/><span class="hl-5">new</span><span class="hl-0"> </span><span class="hl-7">Filter</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-3">subject:</span><span class="hl-0"> </span><span class="hl-3">Subjects</span><span class="hl-0">.</span><span class="hl-6">COMPUTER_SCIENCE</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-3">level:</span><span class="hl-0"> </span><span class="hl-3">Levels</span><span class="hl-0">.</span><span class="hl-6">UNDERGRADUATE</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-3">status:</span><span class="hl-0"> </span><span class="hl-3">Status</span><span class="hl-0">.</span><span class="hl-6">OPEN</span><br/><span class="hl-0">})</span>
+</code></pre>
+
+<a href="#tip-for-enums" id="tip-for-enums" style="color: inherit; text-decoration: none;">
+  <h4>Tip for Enums</h4>
+</a>
+<p>If you need access to the keys or values of an enum, you can use the following syntax:</p>
+<pre><code class="language-ts"><span class="hl-3">Object</span><span class="hl-0">.</span><span class="hl-7">keys</span><span class="hl-0">(</span><span class="hl-3">Subjects</span><span class="hl-0">) </span><span class="hl-1">// [ &#39;ALL&#39;, &#39;INTEGRATIVE_CONSERVATION&#39;, &#39;AFRICANA_STUDIES&#39;, ... ]</span><br/><span class="hl-3">Object</span><span class="hl-0">.</span><span class="hl-7">values</span><span class="hl-0">(</span><span class="hl-3">Subjects</span><span class="hl-0">) </span><span class="hl-1">// [ &#39;0&#39;, &#39;9IIC&#39;, &#39;AFST&#39;, ... ]</span>
+</code></pre>
+
+<a href="#course-class" id="course-class" style="color: inherit; text-decoration: none;">
+  <h3>Course Class</h3>
+</a>
+<p>When course data is fetched, it is returned as an array of Course classes.
+Properties have been cleaned and cast to their respective types.<br>Courses have the following methods: <code>isOpen(): boolean</code>  </p>
+<p>A course is structured like this:</p>
+<pre><code class="language-ts"><span class="hl-5">class</span><span class="hl-0"> </span><span class="hl-9">Course</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">crn</span><span class="hl-0">: </span><span class="hl-9">number</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">id</span><span class="hl-0">: </span><span class="hl-9">string</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">attributes</span><span class="hl-0">: </span><span class="hl-9">Array</span><span class="hl-0">&lt;</span><span class="hl-9">string</span><span class="hl-0">&gt;;</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">title</span><span class="hl-0">: </span><span class="hl-9">string</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">instructor</span><span class="hl-0">: </span><span class="hl-9">string</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">credits</span><span class="hl-0">: </span><span class="hl-9">number</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">times</span><span class="hl-0">: </span><span class="hl-9">string</span><span class="hl-0">;</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">enrollment</span><span class="hl-0">: { </span><span class="hl-3">projected</span><span class="hl-0">: </span><span class="hl-9">number</span><span class="hl-0">; </span><span class="hl-3">current</span><span class="hl-0">: </span><span class="hl-9">number</span><span class="hl-0">; </span><span class="hl-3">available</span><span class="hl-0">: </span><span class="hl-9">number</span><span class="hl-0">; };</span><br/><span class="hl-0">    </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-3">status</span><span class="hl-0">: </span><span class="hl-9">string</span><span class="hl-0">;</span><br/><span class="hl-0">}</span>
+</code></pre>
+
+<a href="#additional-methods" id="additional-methods" style="color: inherit; text-decoration: none;">
+  <h3>Additional Methods</h3>
+</a>
+
+<a href="#terms-promiseltnumbergt" id="terms-promiseltnumbergt" style="color: inherit; text-decoration: none;">
+  <h4><code>terms(): Promise&lt;number[]&gt;</code></h4>
+</a>
+<p>Finds all listed terms on the Open Course List.</p>
+<pre><code class="language-ts"><span class="hl-2">await</span><span class="hl-0"> </span><span class="hl-3">scraper</span><span class="hl-0">.</span><span class="hl-7">terms</span><span class="hl-0">() </span><span class="hl-1">// [ 202320, 202310 ]</span>
+</code></pre>
+
+<a href="#author" id="author" style="color: inherit; text-decoration: none;">
+  <h3>Author</h3>
+</a>
+<p>Jason LaPierre (<a href="mailto:jalapierre@wm.edu">jalapierre@wm.edu</a>)<br>Biology &#39;25</p>
+<p>Please feel free to reach out to me with any questions or suggestions! 👏👏</p>
+</div></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current selected"><a href="modules.html">W&amp;<wbr/>M <wbr/>Fetch</a>
+<ul>
+<li class="tsd-kind-module"><a href="modules/classes_course.html">classes/course</a></li>
+<li class="tsd-kind-module"><a href="modules/lib.html">lib</a></li></ul></li></ul></div></details></nav></div></div>
+<div class="container tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="assets/main.js"></script></body></html>

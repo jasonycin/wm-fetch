@@ -1,0 +1,16 @@
+export enum TermParts {
+    ALL = '0',
+    FULL = '1',
+    GRAD_BUSINESS = 'M',
+    GRAD_EDUCATION = 'E',
+    LAW = 'L',
+    MODULE_A = 'A',
+    MODULE_B = 'B',
+    NON_STANDARD_UNDERGRADUATE = 'NSU',
+    SUM_SESS_1 = 'S1',
+    SUM_SESS_2 = 'S2',
+    SUM_SESS_3 = 'S3',
+    SUM_SESS_4 = 'S4',
+    SUM_SESS_NON_STANDARD = 'NS',
+    SUMMER_STUDY_ABROAD = 'AB',
+};
