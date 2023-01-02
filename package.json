@@ -10,9 +10,18 @@
     "scraper", "w&m", "courses", "william & mary", "ratelimit"
   ],
   "author": "jasonycin <jalapierre@wm.edu>",
-  "license": "ISC",
+  "license": "MPL-2.0",
+  "homepage": "https://github.com/jasonycin/wm-fetch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonycin/wm-fetch/"
+  },
   "bugs": {
-    "email": "jalapierre@wm.edu"
+    "email": "jalapierre@wm.edu",
+    "url": "https://github.com/jasonycin/wm-fetch/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "@types/jsdom": "^20.0.1",

@@ -10,6 +10,7 @@ This identifies your requests to the W&M servers and prevents mistakenly overloa
 
 ### Table of Contents
 1. 📰 [What's changed?](#whats-changed)
+2. 📖 [Documentation](https://jasonycin.github.io/wm-fetch/)
 2. 🧑‍🏫 [Usage](#usage)
    1. 👷‍♂️[Installation](#installation)
    2. 🏗️ [Instantiation](#instantiation)
@@ -53,6 +54,7 @@ const scraper = new Scraper('abcdef@wm.edu')
 ```
 
 ### Fetch Course Data
+📖 [Documentation](https://jasonycin.github.io/wm-fetch/)  
 You can either get all data or filter your query. If you do not provide a filter, all courses will be retrieved.
 #### All courses (`.all()`)
 `term` - Optional. If not provided, the latest term will be fetched.  
@@ -75,6 +77,7 @@ const courses = await scraper.courses(filter)
 ```
 
 ### Enums & Filter
+📖 [Documentation](https://jasonycin.github.io/wm-fetch/)  
 Use this to specify your query. This is the biggest breaking-change from the previously deprecated `wm-classes` library.
 For IntelliSense support, the enums `Attributes`, `Levels`, `Status`, `Subjects`, and `TermPart` are provided.
 These are also the available arguments.
@@ -127,6 +130,7 @@ class Course {
 ```
 
 ### Additional Methods
+📖 [Documentation](https://jasonycin.github.io/wm-fetch/)  
 #### `terms(): Promise<number[]>`
 Finds all listed terms on the Open Course List.
 ```ts
