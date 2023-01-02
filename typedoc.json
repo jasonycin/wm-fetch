@@ -1,7 +1,7 @@
 {
   "name": "W&M Fetch",
   "entryPoints": [
-    "src/lib.ts", "src/classes/course.ts"
+    "lib.ts", "src/classes/course.ts"
   ],
   "out": "docs",
   "requiredToBeDocumented": ["Enum", "Class"]
