@@ -1,6 +1,6 @@
 {
   "name": "wm-fetch",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "High-level scraper for the W&M Open Course List",
   "main": "dist/lib.js",
   "scripts": {

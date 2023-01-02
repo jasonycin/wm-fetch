@@ -99,7 +99,7 @@ export class Scraper {
      * @param concurrency - Number of concurrent requests to make in batches
      * @example Scraper.all({ term: 202320, concurrency: 10 }) // 74 subjects/10 batches = 7 requests => 7 requests * 500ms rate limit = 3.5 seconds
      */
-    public async all(term?: Pick<Filter, 'term'>, concurrency = 5): Promise<Array<Readonly<Course>>> {
+    public async all(term?: Pick<Filter, 'term'>, concurrency = 1): Promise<Array<Readonly<Course>>> {
         if (!term) term = { term: await this.latestTerm() };
 
         const courses: Array<Course> = Array();
@@ -119,6 +119,7 @@ export class Scraper {
         const info = Array();
         const table = dom.window.document.querySelector('tbody').children;
 
+        // Extract course info from table
         for (const row of table) {
             const data = row.getElementsByTagName('td');
 
@@ -127,11 +128,13 @@ export class Scraper {
             }
         }
 
+        // Divide info into arrays of course data (each course contains 11 strings)
         const courses = Array();
         for (let i = 0; i < info.length; i += 11) {
             courses.push(info.slice(i, i + 11));
         }
 
+        // Convert course data into Course objects
         return courses.map((course: Array<string>) => {
             return Object.freeze(new Course().fromTable(course));
         });

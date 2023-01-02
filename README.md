@@ -13,7 +13,7 @@ This identifies your requests to the W&M servers and prevents mistakenly overloa
 2. 📖 [Documentation](https://jasonycin.github.io/wm-fetch/)
 3. 🧑‍🏫 [Usage](#usage)
    1. 👷‍♂️[Installation](#installation)
-   2. 🏗️ [Instantiation](#instantiation)
+   2. 🏗️ [Instantiation](#instantiation--new-scraper-)
    3. 🖥️ [Fetch data](#fetch-course-data)
       1. 🏖️ [All courses](#all-courses--all-)
       2. ⛱️ [Specific query](#specific-query--courses-)
@@ -26,6 +26,7 @@ This identifies your requests to the W&M servers and prevents mistakenly overloa
 > ⚠️ **Replaces** the deprecated [wm-classes](https://www.npmjs.com/package/wm-classes) library.  
 > I've made major changes that make this library much more reliable and less opinionated. You may notice that
 > CSV and JSON support has been removed. It's now up to you to decide how you want to save your data!
+- **v3.1.2.** - Fixed bug where default concurrency was > 1. Updated README.md documentation.
 - **v3.1.1** - 🔨 Fixed major export bug and corrected type definitions for `Course` class
 - **v3.0.0** - 🎉 Replaces the deprecated [wm-classes](https://www.npmjs.com/package/wm-classes) library
 
@@ -41,7 +42,7 @@ After installation of the NPM module, you can import the library:
 import { Scraper, Filter } from 'wm-fetch';
 
 // For JavaScript use the require syntax:
-const wm = require('wm-classes');
+const wm = require('wm-fetch');
 ```
 
 ### Instantiation (`new Scraper()`)
