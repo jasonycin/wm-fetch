@@ -1,6 +1,6 @@
 {
   "name": "wm-fetch",
-  "version": "3.0.0",
+  "version": "3.1.1",
   "description": "High-level scraper for the W&M Open Course List",
   "main": "dist/lib.js",
   "scripts": {
@@ -14,14 +14,11 @@
   "homepage": "https://github.com/jasonycin/wm-fetch",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jasonycin/wm-fetch/"
+    "url": "https://github.com/jasonycin/wm-fetch.git"
   },
   "bugs": {
     "email": "jalapierre@wm.edu",
     "url": "https://github.com/jasonycin/wm-fetch/issues"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "@types/jsdom": "^20.0.1",

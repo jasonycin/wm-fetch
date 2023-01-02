@@ -1,4 +1,6 @@
 .idea
 /src
 debug.*
-src/lib.ts
+lib.ts
+.npmrc
+docs

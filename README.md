@@ -26,6 +26,7 @@ This identifies your requests to the W&M servers and prevents mistakenly overloa
 > ⚠️ **Replaces** the deprecated [wm-classes](https://www.npmjs.com/package/wm-classes) library.  
 > I've made major changes that make this library much more reliable and less opinionated. You may notice that
 > CSV and JSON support has been removed. It's now up to you to decide how you want to save your data!
+- **v3.1.1** - Fixed major export bug and corrected type definitions for `Course` class
 - **v3.0.0** - 🎉 Replaces the deprecated [wm-classes](https://www.npmjs.com/package/wm-classes) library
 
 ## Usage

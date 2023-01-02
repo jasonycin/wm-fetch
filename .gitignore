@@ -2,3 +2,4 @@ dist
 debug.*
 node_modules
 .idea
+.npmrc

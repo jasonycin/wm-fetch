@@ -6,7 +6,9 @@
     "outDir": "dist",
     "sourceMap": true,
     "declaration": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    // Make it include ReadonlyArray
+    "lib": ["es2021", "dom"],
   },
   "exclude": [
     "node_modules"
