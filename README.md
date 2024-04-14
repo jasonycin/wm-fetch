@@ -1,3 +1,6 @@
+# 🛑 STOP 🛑 
+### William & Mary has replaced it's course selection software, thereby making this package obsolete until it reflects the new changes. I do not forsee this happening anytime soon. Using this package will result in hitting endpoints which no longer exist.
+
 > ⚠️ **Replaces** the deprecated [wm-classes](https://www.npmjs.com/package/wm-classes) library
 # W&M Course Scraper
 
